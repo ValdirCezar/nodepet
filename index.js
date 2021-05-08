@@ -1,9 +1,11 @@
 const express = require('express')
+const consign = require('consign')
 
 const app = express()
 
-app.listen(3000, () => console.log('Server running on http://localhost:3000'))
+// This metho include all controllers into app
+consign()
+  .include('controllers')
+  .into(app)
 
-app.get('/', (req, res) => {
-  return res.json({ msg: 'Request GET works!' })
-})
+app.listen(3000, () => console.log('Server running on http://localhost:3000'))
