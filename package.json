@@ -4,5 +4,8 @@
   "description": "API Node.js",
   "main": "index.js",
   "author": "Valdir Cezar <valdircezar312@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
