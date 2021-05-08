@@ -1,3 +1,5 @@
+const Attendance = require('../models/attendances')
+
 module.exports = app => {
 
   /**
@@ -11,6 +13,8 @@ module.exports = app => {
    * POST method
    */
   app.post('/attendances', (req, res) => {
-    return res.json({ msg: 'Attendances POST works!' })
+    const attendance = Attendance.addAttendance(req.body)
+
+    return res.json({ msg: 'Attendances POST OK!' })
   })
 }
