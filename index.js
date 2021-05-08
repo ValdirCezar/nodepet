@@ -1,11 +1,5 @@
-const express = require('express')
-const consign = require('consign')
+const customExpress = require('./config/customExpress')
 
-const app = express()
-
-// This metho include all controllers into app
-consign()
-  .include('controllers')
-  .into(app)
+const app = customExpress()
 
 app.listen(3000, () => console.log('Server running on http://localhost:3000'))
