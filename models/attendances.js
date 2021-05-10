@@ -69,6 +69,18 @@ class Attendance {
       }
     })
   }
+
+  update(id, values, res) {
+    const sql = `UPDATE Attendances SET ? WHERE id = ?`
+
+    connection.query(sql, [values, id], (error) => {
+      if (error) {
+        res.status(400).json(error)
+      } else {
+        res.status(200).json({ msg: 'Updated syccessfuly' })
+      }
+    })
+  }
 }
 
 module.exports = new Attendance

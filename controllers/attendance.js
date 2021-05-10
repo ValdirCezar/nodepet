@@ -23,4 +23,14 @@ module.exports = app => {
   app.post('/attendances', (req, res) => {
     const attendance = Attendance.addAttendance(req.body, res)
   })
+
+  /**
+   * PATCH method
+   */
+  app.patch('/attendances/:id', (req, res) => {
+    const id = parseInt(req.params.id)
+    const values = req.body
+
+    Attendance.update(id, values, res)
+  })
 }
