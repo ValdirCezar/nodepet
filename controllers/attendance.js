@@ -33,4 +33,10 @@ module.exports = app => {
 
     Attendance.update(id, values, res)
   })
+
+  app.delete('/attendances/:id', (req, res) => {
+    const id = parseInt(req.params.id)
+
+    Attendance.delete(id, res)
+  })
 }

@@ -81,6 +81,18 @@ class Attendance {
       }
     })
   }
+
+  delete(id, res) {
+    const sql = `DELETE FROM Attendances WHERE id = ?`
+
+    connection.query(sql, id, (error, result) => {
+      if(error) {
+        res.status(400).json(error)
+      } else {
+        res.status(200).json({ msg: 'Succsessfuly delete' })
+      }
+    })
+  }
 }
 
 module.exports = new Attendance
