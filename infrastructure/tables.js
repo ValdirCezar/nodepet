@@ -13,6 +13,8 @@ class Tables {
                     service varchar(20),
                     status varchar(20) NOT NULL,
                     comments text,
+                    createdAt datetime NOT NULL DEFAULT NOW(),
+                    scheduling datetime NOT NULL,
                     PRIMARY KEY(id)
     )`
 
